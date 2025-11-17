@@ -1,0 +1,15 @@
+# Python 3.9 
+google-search-results            
+aiohttp
+aiolimiter                       
+tenacity                         
+requests
+requests-cache                   
+beautifulsoup4
+lxml            
+python-dotenv                    
+pandas
+numpy
+tqdm                            
+Pillow                           
+ImageHash                        
