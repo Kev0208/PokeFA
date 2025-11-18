@@ -12,6 +12,7 @@ Every sample is traceable: I preserve source URLs and a per-image ledger of tran
 
 ## Repository Layout
 
+```
 PokeFA/
 ├── LICENSE
 ├── README.md
@@ -55,17 +56,17 @@ PokeFA/
     ├── species.py
     ├── split.py
     └── webdataset.py
-
+```
 
 > Note on dependencies: Each pipeline stage has its own requirements file to avoid conflicts (e.g., DeepDanbooru v3 for NSFW uses TensorFlow, while OCR/inpainting/scoring rely on PyTorch and other libs). Install per-stage as needed.
 
 ---
 
-## Pipeline (Concise Overview)
+## Pipeline
 
 **Important:** *All example usages live in each script’s* **top-of-file docstring**. Run scripts directly; follow the documented CLI flags there.
 
-### 0) Popularity-Banded Quotas (Design Input)
+### 0) Popularity-Banded Quotas 
 - What: Allocate collection budget across 1,025 Pokémon using rank bands + floors to emphasize popular species while preserving tail coverage.
 - Inputs: `quotas/quotas.csv` (derived from the **Thomas Game Docs** popularity survey; ~1.6M responses: https://thomasgamedocs.com/pokemon/).
 
