@@ -1,12 +1,12 @@
 # PokeFA — Large-scale Pokémon fan-art dataset with relevance/aesthetic scores and hybrid captions
 
-PokeFA is the first large-scale Pokémon fan-art image dataset and an end-to-end, auditable pipeline.  
+PokeFA is the first large-scale Pokémon fan-art image dataset and with an end-to-end, auditable pipeline.  
 I collected 30,000 images across 1,025 Pokémon using a popularity-banded budget, then ran an extensive preprocessing pipeline:
 
 NSFW filtering → OCR localization & inpainting → resizing → relevance & aesthetic scoring (OpenAI `gpt-5-mini`) → near-duplicate removal → quality filtering to the top 16,000 images → hybrid captions (sentence + tags via `gpt-5-mini`) → caption cleaning → WebDataset packaging.
 
 Every sample is traceable: I preserve source URLs and a per-image ledger of transformations and decisions.  
-➡️ **Full dataset on Hugging Face**: `{repo_link_to_be_provided}`
+➡️ **Full dataset on Hugging Face**: https://huggingface.co/datasets/Kev0208/PokeFA-pokemon-fanart-captioned
 
 ---
 
@@ -73,7 +73,7 @@ PokeFA/
 ---
 
 ### 1) Raw Data Collection (Scraping)
-- Goal: Gather ~30k candidate images by species according to quotas; record source URLs and bytes-level integrity.
+- Goal: Guided by quotas, a scraper logs candidate URLs and downloads valid image/* payloads with the raw-bytes MD5 hash string as the stable identifier
 - Order:
   1. `scraping/scrape.py` (uses `serpapi_client.py`, `utils.py` under the hood)
 - Outputs: `metadata/images.csv` (global ledger), raw images under `data_raw/...`.
